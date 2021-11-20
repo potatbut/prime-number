@@ -8,4 +8,4 @@
 
 ------------
 
-:tw-1f33b: Pure JS, HTML, SCSS
+🌻 Pure JS, HTML, SCSS
