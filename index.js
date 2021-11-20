@@ -67,7 +67,7 @@ btn.addEventListener('click', function() {
   LIST[LIST_LENGTH].remove()
 
   LIST[LIST_LENGTH-1].innerHTML = LIST[LIST_LENGTH-1].innerText.replace(',','.')
-  document.querySelector('.list-value').innerHTML = `There are ${document.querySelectorAll('li').length} prime numbers in your number:`
+  document.querySelector('.list-value').innerHTML = `There are ${document.querySelectorAll('li').length} prime numbers before your number:`
 })
 
 
