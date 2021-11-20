@@ -56,13 +56,18 @@ btn.addEventListener('click', function() {
   for(let i = 2; i <= value; i++) {
     if(prime(i)){
       const li = document.createElement("li")
-      const yup = document.querySelector('.list')
-      yup.appendChild(li)
+      const valueList = document.querySelector('.list')
+      valueList.appendChild(li)
       li.innerHTML = `${i}` + ",&nbsp;"
     }
   }
-  document.querySelectorAll('li')[document.querySelectorAll('li').length-1].innerHTML = document.querySelectorAll('li')[document.querySelectorAll('li').length-1].innerText.replace(',','.')
-  document.querySelector('.list-value').innerHTML = `Also ${document.querySelectorAll('li').length} prime numbers in your number:`
+  const LIST = document.querySelectorAll('li')
+  const LIST_LENGTH = LIST.length-1
+
+  LIST[LIST_LENGTH].remove()
+
+  LIST[LIST_LENGTH-1].innerHTML = LIST[LIST_LENGTH-1].innerText.replace(',','.')
+  document.querySelector('.list-value').innerHTML = `There are ${document.querySelectorAll('li').length} prime numbers in your number:`
 })
 
 
