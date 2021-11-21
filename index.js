@@ -21,9 +21,6 @@ Array.from(input).forEach(input => {
         if (value > max) { 
           input.value = max 
         }
-        else if (value < min) { 
-          input.value = min 
-        }
     })
 })
 
@@ -32,7 +29,10 @@ btn.addEventListener('click', function() {
   document.querySelectorAll('li').forEach((e)=> {
     e.remove()
   })
+
   let value = document.querySelector('.input').value
+
+
   function prime(newValue) {
     for(let i = 2; i <= newValue/2; i++){
       if(newValue%i === 0){
@@ -64,10 +64,26 @@ btn.addEventListener('click', function() {
   const LIST = document.querySelectorAll('li')
   const LIST_LENGTH = LIST.length-1
 
-  LIST[LIST_LENGTH].remove()
+  if (value == 2) {
+    LIST[LIST_LENGTH].remove()
+    document.querySelector('.list-value').innerHTML = ``
+    return
+  } else if(value == 1) {
+    document.querySelector('.list-value').innerHTML = `1 can only be divided by one number, 1 itself, so with this definition 1 is not a prime number. It is important to remember that mathematical definitions develop and evolve. Throughout history, many mathematicians considered 1 to be a prime number although that is not now a commonly held view.`
+  } else if(document.querySelector('body').classList.contains('green')) {
+    LIST[LIST_LENGTH].remove()
+    LIST[LIST_LENGTH-1].innerHTML = LIST[LIST_LENGTH-1].innerText.replace(',','.')
+    document.querySelector('.list-value').innerHTML = `There are ${LIST_LENGTH} prime numbers before your number:`
+  } else {
+    LIST[LIST_LENGTH].innerHTML = LIST[LIST_LENGTH].innerText.replace(',','.')
+    document.querySelector('.list-value').innerHTML = `There are ${LIST_LENGTH+1} prime numbers before your number:`
+  }
 
-  LIST[LIST_LENGTH-1].innerHTML = LIST[LIST_LENGTH-1].innerText.replace(',','.')
-  document.querySelector('.list-value').innerHTML = `There are ${document.querySelectorAll('li').length} prime numbers before your number:`
+  
+  /* if(!(value < 3 || value === '')) {
+    document.querySelector('.list-value').innerHTML = `There are ${LIST_LENGTH} prime numbers before your number:`
+  } */
+  
 })
 
 
