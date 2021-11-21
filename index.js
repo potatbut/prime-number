@@ -79,11 +79,6 @@ btn.addEventListener('click', function() {
     document.querySelector('.list-value').innerHTML = `There are ${LIST_LENGTH+1} prime numbers before your number:`
   }
 
-  
-  /* if(!(value < 3 || value === '')) {
-    document.querySelector('.list-value').innerHTML = `There are ${LIST_LENGTH} prime numbers before your number:`
-  } */
-  
 })
 
 
