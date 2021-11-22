@@ -61,6 +61,8 @@ btn.addEventListener('click', function() {
       li.innerHTML = `${i}` + ",&nbsp;"
     }
   }
+
+
   const LIST = document.querySelectorAll('li')
   const LIST_LENGTH = LIST.length-1
 
@@ -74,7 +76,14 @@ btn.addEventListener('click', function() {
     LIST[LIST_LENGTH].remove()
     LIST[LIST_LENGTH-1].innerHTML = LIST[LIST_LENGTH-1].innerText.replace(',','.')
     document.querySelector('.list-value').innerHTML = `There are ${LIST_LENGTH} prime numbers before your number:`
-  } else {
+  } 
+  else if(!value || value === '') {
+    document.querySelector(".answer").innerHTML = "But where is the number?"
+    document.querySelector('.list-value').innerHTML = ''
+    document.querySelector("body").classList.remove('red')
+    document.querySelector("body").classList.remove('green')
+  }
+   else {
     LIST[LIST_LENGTH].innerHTML = LIST[LIST_LENGTH].innerText.replace(',','.')
     document.querySelector('.list-value').innerHTML = `There are ${LIST_LENGTH+1} prime numbers before your number:`
   }
