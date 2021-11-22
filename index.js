@@ -79,7 +79,7 @@ btn.addEventListener('click', function() {
   } 
   else if(!value || value === '') {
     document.querySelector(".answer").innerHTML = "But where is the number?"
-    document.querySelector('.list-value').innerHTML = ''
+    document.querySelector('.list-value').innerHTML = '🤔'
     document.querySelector("body").classList.remove('red')
     document.querySelector("body").classList.remove('green')
   }
